@@ -1,0 +1,65 @@
+@import "@inkress/apps-core/styles.css";
+
+/* Order Updates — multi-channel auto-notifications, per-event editors. */
+
+.ou-warn { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; padding: 10px 12px; border-radius: 9px; background: var(--warn-wash); color: oklch(0.5 0.12 70); font-size: 0.8125rem; }
+.ou-field { display: flex; flex-direction: column; gap: 5px; }
+.ou-hint { font-size: 0.8125rem; margin-bottom: 14px; }
+.ou-hint code { font-family: var(--mono); font-size: 0.72rem; background: var(--panel); padding: 1px 5px; border-radius: 4px; }
+
+/* realtime / auto-send banner */
+.ou-realtime { display: flex; align-items: center; gap: 9px; padding: 11px 14px; border-radius: 10px; margin-bottom: 16px; background: var(--panel); border: 1px solid var(--line); font-size: 0.8125rem; color: var(--ink-soft); }
+.ou-realtime .ic { color: var(--ink-faint); flex: none; }
+.ou-realtime.is-on { background: var(--ok-wash); border-color: color-mix(in oklch, var(--ok) 28%, transparent); color: color-mix(in srgb, var(--ok) 75%, var(--ink)); }
+.ou-realtime.is-on .ic { color: var(--ok); }
+.ou-chips { margin-left: auto; display: flex; gap: 6px; }
+.ou-chip { display: inline-flex; align-items: center; gap: 4px; height: 22px; padding: 0 8px; border-radius: 7px; font-size: 0.72rem; font-weight: 600; background: var(--surface); border: 1px solid var(--line); color: var(--ink-faint); }
+.ou-chip.is-on { color: var(--ok); border-color: color-mix(in oklch, var(--ok) 30%, transparent); }
+.ou-chip .ic { color: currentColor; }
+
+/* merge palette */
+.ou-merge { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 14px; }
+.ou-mergebtn { height: 26px; padding: 0 9px; font-family: var(--mono); font-size: 0.72rem; border-radius: 7px; border: 1px solid var(--line); background: var(--panel); color: var(--accent); }
+.ou-mergebtn:hover { border-color: var(--accent); background: var(--surface); }
+
+/* per-event template cards */
+.ou-templates { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 760px) { .ou-templates { grid-template-columns: 1fr; } }
+.ou-tmpl { padding: 13px; border: 1px solid var(--line); border-radius: var(--r); background: var(--panel); transition: border-color .12s var(--ease); }
+.ou-tmpl.is-on { border-color: color-mix(in oklch, var(--ok) 35%, var(--line)); }
+.ou-tmpl-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.ou-tmpl input, .ou-tmpl textarea { margin-bottom: 7px; background: var(--surface); }
+.ou-toggle { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8125rem; color: var(--ink-soft); }
+.ou-toggle input { width: auto; height: auto; }
+
+/* channels */
+.ou-chan-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 9px; }
+.ou-chan { display: inline-flex; align-items: center; gap: 5px; font-size: 0.8125rem; color: var(--ink-soft); }
+.ou-chan input { width: auto; height: auto; }
+.ou-chan .ic { color: var(--ink-faint); }
+.ou-chan-pill { display: inline-flex; align-items: center; gap: 4px; font-size: 0.8125rem; }
+.ou-chan-pill .ic { color: var(--ink-faint); }
+
+/* live preview */
+.ou-preview-wrap { position: relative; margin-top: 6px; padding: 11px 12px; border: 1px dashed var(--line-strong); border-radius: 9px; background: var(--surface); }
+.ou-preview-tag { position: absolute; top: -8px; left: 10px; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-faint); background: var(--panel); padding: 0 6px; }
+.ou-preview-subject { font-weight: 700; font-size: 0.875rem; margin-bottom: 3px; }
+.ou-preview-body { font-size: 0.8125rem; color: var(--ink-soft); white-space: pre-line; }
+.ou-preview-mini { margin-top: 10px; padding: 10px 12px; border-radius: 9px; background: var(--panel); }
+.ou-preview-mini strong { font-size: 0.875rem; }
+.ou-preview-mini .bv-muted { font-size: 0.8125rem; margin-top: 2px; }
+
+/* settings */
+.ou-quiet-row { display: flex; gap: 14px; flex-wrap: wrap; margin: 12px 0; }
+.ou-quiet-row .ou-field { gap: 4px; }
+.ou-accent { display: flex; align-items: center; gap: 12px; }
+.ou-accent input[type="color"] { width: 46px; height: 34px; padding: 2px; border-radius: 8px; cursor: pointer; }
+.ou-logo { height: 34px; border-radius: 7px; border: 1px solid var(--line); }
+
+/* WhatsApp pairing */
+.ou-wa { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
+.ou-wa p { margin: 0; font-size: 0.8125rem; }
+.ou-wa-qr { width: 220px; height: 220px; border: 1px solid var(--line); border-radius: 12px; background: #fff; padding: 8px; }
+.ou-wa-status { display: inline-flex; align-items: center; gap: 8px; font-size: 0.875rem; font-weight: 600; color: var(--ink-soft); }
+.ou-wa-status.is-on { color: var(--ok); }
+.ou-wa-status .ic { color: currentColor; }
